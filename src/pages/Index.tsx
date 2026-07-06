@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Navbar } from "@/components/Navbar";
-import { LogoMarquee } from "@/components/LogoMarquee";
 import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
 import { Process } from "@/components/Process";
@@ -112,8 +111,6 @@ function Hero() {
               </a>
             </div>
           </div>
-
-          <LogoMarquee />
         </section>
       </div>
     </div>
