@@ -5,17 +5,24 @@ import { cn } from "@/lib/utils";
 type SiteCardProps = {
   site: Site;
   className?: string;
+  /** Sizing for the preview area; defaults to a fixed-height strip. */
+  frameClassName?: string;
   onOpen: (site: Site) => void;
 };
 
-export function SiteCard({ site, className, onOpen }: SiteCardProps) {
+const DEFAULT_FRAME = "h-64 md:h-72";
+
+export function SiteCard({ site, className, frameClassName = DEFAULT_FRAME, onOpen }: SiteCardProps) {
   return (
     <article className={cn("group", className)}>
       <button
         type="button"
         onClick={() => onOpen(site)}
         aria-label={`Open live preview of ${site.name}`}
-        className="relative block h-64 w-full overflow-hidden rounded-2xl bg-background text-left focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/40 md:h-72"
+        className={cn(
+          "relative block w-full overflow-hidden rounded-2xl bg-background text-left focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/40",
+          frameClassName
+        )}
       >
         {site.embeddable ? (
           <LiveFrame url={site.url} title={site.name} className="h-full w-full" />
