@@ -42,26 +42,6 @@
   overflow: hidden;
 }
 
-/* Soft white cursor-follow spotlight on the services stage. */
-.service-stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 300ms ease;
-  background: radial-gradient(
-    420px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(255, 255, 255, 0.05),
-    transparent 60%
-  );
-}
-
-.service-stage:hover::after {
-  opacity: 1;
-}
-
 .liquid-glass::before {
   content: "";
   position: absolute;

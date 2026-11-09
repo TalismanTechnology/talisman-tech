@@ -61,7 +61,7 @@ export function Services() {
           className="mx-auto mt-16 grid max-w-6xl gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.6fr)] lg:items-center lg:gap-8"
         >
           <AudienceTabs activeIndex={activeIndex} isCycling={isCycling} onSelect={handleSelect} />
-          <ServiceStage audience={AUDIENCES[activeIndex]} index={activeIndex} total={AUDIENCES.length} />
+          <ServiceStage audience={AUDIENCES[activeIndex]} />
         </motion.div>
       </div>
     </section>
