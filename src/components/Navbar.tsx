@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
 const NAV_ITEMS = [
-  { label: "Services", href: "#services", hasChevron: true },
   { label: "Work", href: "#work", hasChevron: false },
+  { label: "Services", href: "#services", hasChevron: true },
   { label: "Process", href: "#process", hasChevron: false },
   { label: "Plans", href: "#plans", hasChevron: true },
 ] as const;

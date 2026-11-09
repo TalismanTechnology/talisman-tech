@@ -9,6 +9,7 @@ import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CONSULT_MAILTO } from "@/lib/contact";
 
 const VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_065045_c44942da-53c6-4804-b734-f9e07fc22e08.mp4";
@@ -101,7 +102,7 @@ function Hero() {
               </p>
 
               <a
-                href="#contact"
+                href={CONSULT_MAILTO}
                 className={cn(
                   buttonVariants({ variant: "heroSecondary", size: "unset" }),
                   "mt-[25px] px-[29px] py-[24px]"
@@ -122,7 +123,8 @@ const Index = () => {
   useVideoFadeLoop(videoRef);
 
   return (
-    <div className="relative bg-background">
+    // overflow-x-clip: decorative blurs are wider than phone viewports.
+    <div className="relative overflow-x-clip bg-background">
       <video
         ref={videoRef}
         src={VIDEO_URL}
@@ -136,11 +138,11 @@ const Index = () => {
 
       <div className="relative z-10">
         <Hero />
-        <Services />
         <Work />
+        <Services />
         <Process />
-        <Plans />
         <Testimonials />
+        <Plans />
         <CtaSection />
         <Footer />
       </div>

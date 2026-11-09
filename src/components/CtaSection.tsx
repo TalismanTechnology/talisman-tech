@@ -1,5 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CONSULT_MAILTO, CONTACT_EMAIL } from "@/lib/contact";
 
 const GRADIENT = "linear-gradient(to left, #6366f1, #a855f7, #fcd34d)";
 
@@ -25,7 +26,7 @@ export function CtaSection() {
           Tell us what you're building. We'll reply within one business day with ideas and a fixed quote.
         </p>
         <a
-          href="mailto:hello@talismantech.dev?subject=Website%20consult"
+          href={CONSULT_MAILTO}
           className={cn(
             buttonVariants({ variant: "heroSecondary", size: "unset" }),
             "mt-8 px-[29px] py-[24px]"
@@ -35,8 +36,8 @@ export function CtaSection() {
         </a>
         <p className="mt-6 text-sm text-foreground/50">
           or email{" "}
-          <a href="mailto:hello@talismantech.dev" className="text-foreground/80 underline-offset-4 hover:underline">
-            hello@talismantech.dev
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-foreground/80 underline-offset-4 hover:underline">
+            {CONTACT_EMAIL}
           </a>
         </p>
       </div>
